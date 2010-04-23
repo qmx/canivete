@@ -1,0 +1,1 @@
+require 'ruutils/deprecate'
