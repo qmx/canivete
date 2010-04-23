@@ -1,5 +1,24 @@
 require 'spec_helper'
 
+describe RUUtils::Deprecate do
+
+	before(:each) do
+		@test = Test.new
+	end
+
+	it "should warn when a deprecated method is called" do
+		@test.should_receive(:warn)
+		@test.test
+	end
+
+	it "should not warn when a ordinary method is called" do
+		@test.should_not_receive(:warn)
+		@test.test2
+	end
+
+end
+
+# test class below
 class Test
 	include RUUtils::Deprecate
 
@@ -10,15 +29,5 @@ class Test
 
 	def test2
 
-	end
-end
-
-describe RUUtils::Deprecate do
-	it "should warn when a deprecated method is called" do
-		test = Test.new
-		test.should_receive(:warn)
-		test.test
-		test.should_not_receive(:warn)
-		test.test2
 	end
 end
