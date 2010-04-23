@@ -6,15 +6,15 @@ module Canivete
 			base.extend(Deprecate)
 		end
 
-		def method_added(methodName)
+		def method_added(method_name)
 			if self.instance_variable_get(:@_deprecate_it) != nil
-				puts "#{methodName} will be redefined"
+				puts "#{method_name} will be redefined"
 				self.instance_variable_set(:@_deprecate_it, nil)
 				module_eval <<END
-					alias_method :deprecated_#{methodName}, :#{methodName}
-					def #{methodName}(*args, &block)
-						warn "Warning: calling deprecated method #{self}.#{methodName}"
-						deprecated_#{methodName}(*args, &block)
+					alias_method :deprecated_#{method_name}, :#{method_name}
+					def #{method_name}(*args, &block)
+						warn "Warning: calling deprecated method #{self}.#{method_name}"
+						deprecated_#{method_name}(*args, &block)
 					end
 END
 			end
