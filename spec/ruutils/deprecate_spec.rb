@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 class Test
-	include RUUtils
-	
+	include RUUtils::Deprecate
+
 	deprecate
 	def test
 

@@ -1,10 +1,10 @@
 module RUUtils
-	
-	def self.included(base)
-		base.extend(RUUtils::Deprecate)
-	end
 
 	module Deprecate
+
+		def self.included(base)
+			base.extend(Deprecate)
+		end
 
 		def method_added(methodName)
 			if self.instance_variable_get(:@_deprecate_it) != nil
