@@ -1,15 +1,15 @@
-# RUUtils - Ruby Ultimate Utilities
+# Canivete - Ruby Not-so-swiss knife
 
 Basically this gem provides you with a very handy set of utilities. Currently, only the deprecate functionality is included
 
 Instructions:
 
-		gem install ruutils
+		gem install canivete
 
-		require  'ruutils/deprecate'
+		require  'canivete/deprecate'
 
 		class Test
-			include RUUtils::Deprecate
+			include Canivete::Deprecate
 
 			deprecate
 			def soon_to_die_method

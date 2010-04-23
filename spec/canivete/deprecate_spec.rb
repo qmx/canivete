@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe RUUtils::Deprecate do
+describe Canivete::Deprecate do
 
 	before(:each) do
 		@test = Test.new
@@ -20,7 +20,7 @@ end
 
 # test class below
 class Test
-	include RUUtils::Deprecate
+	include Canivete::Deprecate
 
 	deprecate
 	def test

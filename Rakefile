@@ -4,8 +4,8 @@ require 'rake'
 require 'rake/gempackagetask'
 require 'spec/rake/spectask'
 
-GEM = "ruutils"
-GEM_VERSION = "0.0.2"
+GEM = "canivete"
+GEM_VERSION = "0.0.3"
 SUMMARY = "ruby future swiss knife"
 AUTHOR = "Douglas Campos"
 EMAIL = "douglas@theros.info"
@@ -27,7 +27,7 @@ end
 
 Spec::Rake::SpecTask.new do |t|
   t.spec_files = FileList['spec/**/*_spec.rb']
-  t.spec_opts = %w(-fp --color)
+  t.spec_opts = %w(-fs --color)
 end
 
 Rake::GemPackageTask.new(spec) do |pkg|
