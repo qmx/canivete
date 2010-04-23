@@ -5,7 +5,7 @@ require 'rake/gempackagetask'
 require 'spec/rake/spectask'
 
 GEM = "ruutils"
-GEM_VERSION = "0.0.1"
+GEM_VERSION = "0.0.2"
 SUMMARY = "ruby future swiss knife"
 AUTHOR = "Douglas Campos"
 EMAIL = "douglas@theros.info"
