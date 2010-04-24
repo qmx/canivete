@@ -16,6 +16,12 @@ describe Canivete::Deprecate do
 		@test.test2
 	end
 
+  it "should accept a :for parameter and used it to warn in favor of which method the first was deprecated" do
+    @test.should_receive(:warn) do |message|
+      message.should include("Test#test")
+    end
+    @test.test3
+  end
 end
 
 # test class below
@@ -30,4 +36,8 @@ class Test
 	def test2
 
 	end
+
+  deprecate :for => :test
+  def test3
+  end
 end
