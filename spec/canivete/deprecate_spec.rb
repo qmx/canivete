@@ -16,14 +16,21 @@ describe Canivete::Deprecate do
     @test.test2
   end
 
-  it "should accept a :for parameter and used it to warn in favor of which method the first was deprecated" do
+  it "should accept a :for parameter with a symbol and used it to warn in favor of which method of the current class the method was deprecated" do
     @test.should_receive(:warn) do |message|
       message.should include("Test#test")
     end
     @test.test3
   end
 
-  it "should call parents method_added method" do
+  it "should accept a :for parameter with a string and used it to warn in favor of what the method was deprecated" do
+    @test.should_receive(:warn) do |message|
+      message.should include(" Class#method")
+    end
+    @test.test4
+  end
+
+  it "should call parent's method_added method" do
     $called_parent.should be_true
   end
 end
@@ -47,5 +54,9 @@ class Test < Parent
 
   deprecate :for => :test
   def test3
+  end
+
+  deprecate :for => "Class#method"
+  def test4 
   end
 end
