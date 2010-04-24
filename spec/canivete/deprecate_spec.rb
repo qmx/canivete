@@ -22,19 +22,27 @@ describe Canivete::Deprecate do
     end
     @test.test3
   end
+
+  it "should call parents method_added method" do
+    $called_parent.should be_true
+  end
+end
+
+class Parent
+  def self.method_added(name)
+    $called_parent = true
+  end
 end
 
 # test class below
-class Test
+class Test < Parent
   include Canivete::Deprecate
 
   deprecate
   def test
-
   end
 
   def test2
-
   end
 
   deprecate :for => :test

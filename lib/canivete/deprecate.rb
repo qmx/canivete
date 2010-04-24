@@ -1,9 +1,7 @@
 module Canivete
-
   module Deprecate
-
     def self.included(base)
-      base.extend(Deprecate)
+      base.extend Deprecate
     end
 
     def method_added(method_name)
@@ -17,7 +15,7 @@ module Canivete
             warn "#{msg}"
             deprecated_#{method_name}(*args, &block)
           end
-          END
+END
       end
       super
     end
@@ -25,6 +23,5 @@ module Canivete
     def deprecate(opts = {})
       @_deprecation_options = opts
     end
-
   end
 end
