@@ -20,3 +20,4 @@ Instructions:
 		Test.new.soon_to_die_method
 		Warning: calling deprecated method Test.soon_to_die_method
 
+CI Server running [here](http://ci.theros.info)
