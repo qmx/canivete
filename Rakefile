@@ -5,7 +5,7 @@ require 'rake/gempackagetask'
 require 'spec/rake/spectask'
 
 GEM = "canivete"
-GEM_VERSION = "0.0.3"
+GEM_VERSION = "0.0.4"
 SUMMARY = "ruby future swiss knife"
 AUTHOR = "Douglas Campos"
 EMAIL = "douglas@theros.info"
