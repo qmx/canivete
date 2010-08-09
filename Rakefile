@@ -5,8 +5,8 @@ require 'rake/gempackagetask'
 require 'spec/rake/spectask'
 
 GEM = "canivete"
-GEM_VERSION = "0.0.4"
-SUMMARY = "ruby future swiss knife"
+GEM_VERSION = "0.0.5"
+SUMMARY = "ruby not-so swiss knife"
 AUTHOR = "Douglas Campos"
 EMAIL = "douglas@theros.info"
 HOMEPAGE = "http://qmx.me"
