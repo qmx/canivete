@@ -1,6 +1,7 @@
 require 'text'
 module Canivete
 	module Similarity
+		# return the similarity rate between two strings, ranging from 0.0 to 1.0
 		def similarity_rate(target_string, options = {:ignore_case => true})
 			src = self.dup
 			tgt = target_string.dup
