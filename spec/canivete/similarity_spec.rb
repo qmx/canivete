@@ -17,4 +17,10 @@ describe Canivete::Similarity do
 	it "should ignore case" do
 		"JoAO".similarity_rate("joao").should == 1.0
 	end
+	it "should not ignore case when told so" do
+		"JoAO".similarity_rate("joao", :ignore_case => false).should < 1.0
+	end
+	it "should cope with different-sized strings" do
+		"JoAO".similarity_rate("paralelogram of n sides").should == 0.0
+	end
 end
